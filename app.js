@@ -20,7 +20,7 @@ app.use('/api/groups', groupRoutes);
 app.use('/api/students', studentRoutes);
 app.use('/api/schedules', scheduleRoutes);
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
