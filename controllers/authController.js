@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const pool = require('../db'); // DB 연결 모듈
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const SECRET_KEY = 'your-secret-key'; // 노출 주의
 
@@ -14,7 +14,7 @@ console.log ('pass:: ', password);
 
     console.log('쿼리종료', user.password);
 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 if (!user || user.length === 0) {
   return res.status(401).json({ message: '존재하지 않는 사용자입니다.' });
