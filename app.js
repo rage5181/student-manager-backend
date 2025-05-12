@@ -32,11 +32,11 @@ const mysql = require('mysql2/promise');
 (async () => {
   try {
     const connection = await mysql.createConnection({
-      host: 'no32.ndrive.co.kr',
-      user: 'ragew',
-      password: 'Rage!1822513',
-      database: 'ragew_db',
-      port: 3206
+      host: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_HOST,
+      port: process.env.DB_PORT     
     });
 
     console.log('✅ MySQL 연결 성공!');
