@@ -32,6 +32,8 @@ const mysql = require('mysql2/promise');
 console.log('env.host===========>',process.env.DB_HOST);
 console.log('env.database===========>',process.env.DB_NAME);
 console.log('env.password===========>',process.env.DB_PASSWORD);
+console.log('env.user===========>',process.env.DB_USER);
+console.log('env.port===========>',process.env.DB_PORT);
 
 (async () => {
   try {
