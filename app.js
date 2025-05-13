@@ -29,6 +29,7 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+console.log('process.env.NODE_ENV===>', process.env.NODE_ENV);
 
 // 커넥션 테스트용 코드
 const mysql = require('mysql2/promise');
@@ -38,7 +39,9 @@ const mysql = require('mysql2/promise');
     console.log('Connecting to DB with:', {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT  
   });
 
     const connection = await mysql.createConnection({
