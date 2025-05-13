@@ -29,13 +29,17 @@ app.listen(PORT, () => {
 // 커넥션 테스트용 코드
 const mysql = require('mysql2/promise');
 
+console.log('env.host===========>',process.env.DB_HOST);
+console.log('env.database===========>',process.env.DB_NAME);
+console.log('env.password===========>',process.env.DB_PASSWORD);
+
 (async () => {
   try {
     const connection = await mysql.createConnection({
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
-      database: process.env.DB_HOST,
+      database: process.env.DB_NAME,
       port: process.env.DB_PORT     
     });
 
