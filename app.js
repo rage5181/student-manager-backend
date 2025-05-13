@@ -6,7 +6,11 @@ const authRoutes = require('./routes/authRoutes');
 const groupRoutes = require('./routes/groupRoutes');
 const scheduleRoutes = require('./routes/scheduleRoutes');
 
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+  console.log('========= dotenv.config run =========');
+}
+
 
 const app = express();
 
@@ -29,14 +33,14 @@ app.listen(PORT, () => {
 // 커넥션 테스트용 코드
 const mysql = require('mysql2/promise');
 
-console.log('env.host===========>',process.env.DB_HOST);
-console.log('env.database===========>',process.env.DB_NAME);
-console.log('env.password===========>',process.env.DB_PASSWORD);
-console.log('env.user===========>',process.env.DB_USER);
-console.log('env.port===========>',process.env.DB_PORT);
-
 (async () => {
   try {
+    console.log('Connecting to DB with:', {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    database: process.env.DB_NAME
+  });
+
     const connection = await mysql.createConnection({
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
