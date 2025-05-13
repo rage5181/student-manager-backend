@@ -12,7 +12,7 @@ console.log ('pass:: ', password);
     const [rows] = await pool.query('SELECT * FROM TB_USERS WHERE email = ?', [email]);
     const user = rows[0];
 
-    console.log('쿼리종료', user.password);
+    console.log('쿼리종료=======');
 
 const bcrypt = require('bcryptjs');
 
