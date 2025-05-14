@@ -35,7 +35,7 @@ app.listen(PORT, () => {
 });
 
 
-console.log('✅ Loaded ENV keys:', Object.keys(process.env).sort());
+console.log('✅ Loaded ENV keys:', process.env.sort());
 
 // 커넥션 테스트용 코드
 const mysql = require('mysql2/promise');
