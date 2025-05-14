@@ -30,10 +30,11 @@ app.use('/api/schedules', scheduleRoutes);
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  console.log('process.env.NODE_ENV===>', process.env.NODE_ENV);
+  console.log('process.env.MYSQL_HOST===>', process.env.MYSQL_HOST);
 });
 
-console.log('process.env.NODE_ENV===>', process.env.NODE_ENV);
-console.log('process.env.MYSQL_HOST===>', process.env.MYSQL_HOST);
+
 // 커넥션 테스트용 코드
 const mysql = require('mysql2/promise');
 
