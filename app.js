@@ -32,6 +32,7 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log('process.env.SERVER1===>', process.env.SERVER1);
   console.log('process.env.SERVER2===>', process.env.SERVER2);
+  console.log('process.env.MYSQLHOST===>', process.env.MYSQLHOST);
 });
 
 
