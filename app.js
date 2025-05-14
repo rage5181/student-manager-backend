@@ -6,15 +6,6 @@ const authRoutes = require('./routes/authRoutes');
 const groupRoutes = require('./routes/groupRoutes');
 const scheduleRoutes = require('./routes/scheduleRoutes');
 
-/*
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-  console.log('========= dotenv.config run =========');
-}
-*/
-
-
-
 const app = express();
 
 app.use(cors());
