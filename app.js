@@ -6,10 +6,13 @@ const authRoutes = require('./routes/authRoutes');
 const groupRoutes = require('./routes/groupRoutes');
 const scheduleRoutes = require('./routes/scheduleRoutes');
 
+/*
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
   console.log('========= dotenv.config run =========');
 }
+*/
+console.log('========= process.env =========', process.env);
 
 
 const app = express();
