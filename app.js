@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
   console.log('========= dotenv.config run =========');
 }
 */
-console.log('========= process.env =========', process.env);
+
 
 
 const app = express();
@@ -34,6 +34,8 @@ app.listen(PORT, () => {
   console.log('process.env.MYSQL_HOST===>', process.env.MYSQL_HOST);
 });
 
+
+console.log('✅ Loaded ENV keys:', Object.keys(process.env).sort());
 
 // 커넥션 테스트용 코드
 const mysql = require('mysql2/promise');
