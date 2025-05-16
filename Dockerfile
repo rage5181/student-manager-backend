@@ -18,11 +18,11 @@ COPY . .
 # 실제로는 아래 ENV는 제거하고 docker run 시점에 전달하거나, Dockerfile에서는 설정하지 않습니다.
 # Railway가 빌드 타임과 런타임을 분리하지 않기 때문에 필요 시 아래와 같이 ENV를 명시해야 할 수도 있습니다.
 
-ENV MYSQLHOST=${{MySQL.MYSQLHOST}} \
-    MYSQLUSER=${{MySQL.MYSQLUSER}} \
-    MYSQLDATABASE=${{MySQL.MYSQLDATABASE}} \
-    MYSQLPASSWORD=${{MySQL.MYSQLPASSWORD}} \
-    MYSQLPORT=${{MySQL.MYSQLPORT}} \
+ENV MYSQLHOST=${MySQL.MYSQLHOST} \
+    MYSQLUSER=${MySQL.MYSQLUSER} \
+    MYSQLDATABASE=${MySQL.MYSQLDATABASE} \
+    MYSQLPASSWORD=${MySQL.MYSQLPASSWORD} \
+    MYSQLPORT=${MySQL.MYSQLPORT} \
     SERVER1=dev_test \
     SERVER2=$SERVER2
 
