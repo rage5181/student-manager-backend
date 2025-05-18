@@ -21,15 +21,14 @@ app.use('/api/schedules', scheduleRoutes);
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log('process.env.SERVER1===>', process.env.SERVER1);
-  console.log('process.env.SERVER2===>', process.env.SERVER2);
   
 });
-
 
 console.log("✅ ENV KEYS:", Object.keys(process.env));
 console.log("✅ ENV MYSQL-related:", Object.entries(process.env).filter(([k]) => k.includes('MYSQL')));
 
+console.log('process.env.SERVER1===>', process.env.SERVER1);
+console.log('process.env.SERVER2===>', process.env.SERVER2);
 
 // 커넥션 테스트용 코드
 const mysql = require('mysql2/promise');
