@@ -18,6 +18,12 @@ app.use('/api/groups', groupRoutes);
 app.use('/api/students', studentRoutes);
 app.use('/api/schedules', scheduleRoutes);
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+  console.log("✅ .env 로드 완료 (개발 환경)");
+}
+
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
