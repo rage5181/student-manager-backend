@@ -4,6 +4,8 @@ exports.createGroup = async (req, res) => {
   const { name, description } = req.body;
   const userId = req.user.id;
 console.log('createGroup >>');
+console.log(`userId = ${userId}, name = ${name}, description = ${description}`);
+
   try {
     const [result] = await pool.query(
       'INSERT INTO TB_GROUPS (name, description, user_id) VALUES (?, ?, ?)',
